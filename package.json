@@ -14,7 +14,7 @@
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
-    "eslint": "8.49.0",
+    "eslint": "^8.49.0",
     "eslint-config-next": "13.4.19",
     "next": "13.4.19",
     "postcss": "8.4.29",
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
+    "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.0",
     "lint-staged": ">=10",
     "prettier": "3.0.3"
