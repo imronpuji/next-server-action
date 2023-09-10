@@ -1,0 +1,6 @@
+export type Color = "primary" | "secondary" | "danger" | "warning" | "light" | "dark" | "default" | "muted" | "gray"
+export type Measure = "small" | "medium" | "large" | "normal" | "extra-small" | "extra-large" | "ultra-large"
+export type Weight = "normal" | "bold" | "medium" | "semibold"
+export type Variant = "contained" | "outlined" | "text"
+export type Align = "left" | "center" | "right" | "justify"
+export type InputType = "text" | "password" | "email" | "tel" | "number"
