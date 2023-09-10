@@ -1,5 +1,5 @@
-import Icon from '@/components/UI/Icon';
-import Text from '@/components/UI/Text';
+import Icon from '@/components/ui/Icon';
+import Text from '@/components/ui/Text';
 import Link from 'next/link';
 import React from 'react';
 

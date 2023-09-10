@@ -1,4 +1,4 @@
-import Text from '@/components/UI/Text';
+import Text from '@/components/ui/Text';
 import { Color } from '@/components/types';
 import React from 'react';
 import { motion } from 'framer-motion';
