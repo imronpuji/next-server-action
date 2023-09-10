@@ -1,5 +1,5 @@
 import React from 'react';
-import Text from '@/components/UI/Text';
+import Text from '@/components/ui/Text';
 
 function Footer() {
   return (

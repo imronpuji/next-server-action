@@ -1,5 +1,5 @@
 'use client';
-import Text from '@/components/UI/Text';
+import Text from '@/components/ui/Text';
 import fetcher from '@/lib/fetcher';
 import { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';

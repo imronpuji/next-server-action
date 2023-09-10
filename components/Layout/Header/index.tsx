@@ -1,7 +1,7 @@
 'use client';
-import Button from '@/components/UI/Button';
-import Input from '@/components/UI/Input';
-import Text from '@/components/UI/Text';
+import Button from '@/components/ui/Button';
+import Input from '@/components/ui/Input';
+import Text from '@/components/ui/Text';
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '@/context/AuthContext';
