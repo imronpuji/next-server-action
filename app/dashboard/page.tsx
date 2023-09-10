@@ -3,7 +3,7 @@ import Text from '@/components/UI/Text';
 import fetcher from '@/lib/fetcher';
 import { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
-import Chart from 'chart.js/auto';
+import Chart, { ChartTypeRegistry, registerables } from 'chart.js/auto';
 import CardDashboardUser from '@/components/Common/CardDashboardUser';
 
 type responseFetchAttendances = {
@@ -12,7 +12,6 @@ type responseFetchAttendances = {
 };
 
 const Index = () => {
-  const canvaRef = useRef<HTMLCa>();
   const [attendancesGraph, setAttendancesGraph] =
     useState<responseFetchAttendances>({ dates: [], counts: [] });
 
@@ -45,6 +44,9 @@ const Index = () => {
   useEffect(() => {
     if (attendancesGraph.counts.length > 0) {
       const ctx = document.getElementById('attendanceChart');
+
+      Chart.register(...registerables);
+
       const labels = attendancesGraph.dates;
       const data = {
         labels: labels,
@@ -54,17 +56,16 @@ const Index = () => {
             data: attendancesGraph.counts,
             fill: false,
             tension: 0.1,
-            backgroundColor: ['#F06400'],
-            borderColor: ['#F06400'],
+            backgroundColor: '#F06400',
+            borderColor: '#F06400',
           },
         ],
       };
 
       const config = {
-        type: 'line',
+        type: 'line' as keyof ChartTypeRegistry,
         data: data,
       };
-
       new Chart(ctx as HTMLCanvasElement, config);
     }
   }, [attendancesGraph]);
@@ -80,7 +81,7 @@ const Index = () => {
         <CardDashboardUser total={80} color="warning" title="Last Month" />
       </div>
       <div>
-        <canvas ref={canvaRef} id="attendanceChart"></canvas>
+        <canvas id="attendanceChart"></canvas>
       </div>
     </div>
   );
