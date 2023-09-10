@@ -1,7 +1,10 @@
-const Index = () => {
-  return (
-    <h1>Home</h1>
-  )
+'use client';
+import { useEffect } from 'react';
+
+function DashboardIndex() {
+  useEffect(() => {
+    window.location.href = '/dashboard';
+  });
 }
 
-export default Index
+export default DashboardIndex;

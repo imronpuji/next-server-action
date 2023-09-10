@@ -31,7 +31,7 @@ const Input: FC<InputProps> = ({
                 value={value}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange?.(e)}  
                 placeholder={placeholder}
-                className="w-full p-2 border border-gray-300 rounded-md outline-primary "
+                className="w-full p-2 border border-gray-300 rounded-md outline-primary"
             />
        </div>
     );
