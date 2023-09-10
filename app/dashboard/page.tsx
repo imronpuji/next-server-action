@@ -65,7 +65,7 @@ const Index = () => {
         data: data,
       };
 
-      new Chart(ctx, config);
+      new Chart(ctx as HTMLCanvasElement, config);
     }
   }, [attendancesGraph]);
   return (
