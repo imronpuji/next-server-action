@@ -1,6 +1,6 @@
 'use client';
 
-import LoginForm from '@/components/Common/LoginForm';
+import LoginForm from '@/components/Form/LoginForm';
 import Text from '@/components/ui/Text';
 import Image from 'next/image';
 import { LoginResponse } from '../types';

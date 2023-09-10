@@ -1,10 +1,10 @@
 'use client';
+import CardDashboardUser from '@/components/Common/CardDashboardUser';
 import Text from '@/components/ui/Text';
 import fetcher from '@/lib/fetcher';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import Chart, { ChartTypeRegistry, registerables } from 'chart.js/auto';
-import CardDashboardUser from '@/components/Common/CardDashboardUser';
+import AttendanceChart from '@/carts/AttendanceChart';
 
 type responseFetchAttendances = {
   dates: Array<string>;
@@ -41,34 +41,6 @@ const Index = () => {
     };
   }, []);
 
-  useEffect(() => {
-    if (attendancesGraph.counts.length > 0) {
-      const ctx = document.getElementById('attendanceChart');
-
-      Chart.register(...registerables);
-
-      const labels = attendancesGraph.dates;
-      const data = {
-        labels: labels,
-        datasets: [
-          {
-            label: 'Users Attendance',
-            data: attendancesGraph.counts,
-            fill: false,
-            tension: 0.1,
-            backgroundColor: '#F06400',
-            borderColor: '#F06400',
-          },
-        ],
-      };
-
-      const config = {
-        type: 'line' as keyof ChartTypeRegistry,
-        data: data,
-      };
-      new Chart(ctx as HTMLCanvasElement, config);
-    }
-  }, [attendancesGraph]);
   return (
     <div className="h-full">
       <Text size="large" weight="medium" color="muted">
@@ -81,7 +53,7 @@ const Index = () => {
         <CardDashboardUser total={80} color="warning" title="Last Month" />
       </div>
       <div>
-        <canvas id="attendanceChart"></canvas>
+        <AttendanceChart attendancesGraph={attendancesGraph} />
       </div>
     </div>
   );
